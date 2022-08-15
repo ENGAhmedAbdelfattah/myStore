@@ -1,0 +1,48 @@
+.Success-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  align-items: center;
+  text-align: center;
+  height: calc(100vh - 180px);
+}
+.Success-box h2 {
+  color: rgb(26, 182, 91);
+  font-size: 50px;
+}
+.Success-box p {
+  font-size: 30px;
+  color: #80602b;
+}
+.Success-box .full-name {
+  color: #9f7c1b;
+  font-style: italic;
+}
+.Success-box .total {
+  color: #14860e;
+}
+.Success-box p.days {
+  font-size: 18px;
+}
+/* back to product-list button */
+.Success-box button.btn-back {
+  padding: 2px 3px;
+  margin-top: 10px;
+  border: 1px solid #9f7c1b;
+  background-color: transparent;
+  color: #9f7c1b;
+}
+
+.Success-box button.btn-back:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.Success-box button.btn-back svg {
+  vertical-align: middle;
+}
+.Success-box button.btn-back:hover svg {
+  background-color: #80602b;
+  color: white;
+}

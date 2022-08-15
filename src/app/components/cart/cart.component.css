@@ -1,0 +1,64 @@
+.cart-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 70px;
+}
+
+.cart {
+  width: 100%;
+}
+
+/* form back to product-list button */
+.carts button.btn-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  background-color: transparent;
+  color: #9f7c1b;
+  padding: 2px 3px;
+  margin: 15px auto;
+  border: 1px solid #9f7c1b;
+  width: 70%;
+  height: 30px;
+}
+
+.carts button.btn-back:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.carts button.btn-back svg {
+  vertical-align: middle;
+}
+.carts button.btn-back:hover svg {
+  background-color: #80602b;
+  color: white;
+}
+
+.carts .total {
+  text-align: center;
+}
+.carts .total h3 {
+  color: #80602b;
+  margin: 5px 3px;
+  font-size: 18px;
+}
+
+.carts .total span {
+  display: block;
+  font-size: 24px;
+  width: 100px;
+  font-weight: bold;
+  margin: 10px auto;
+  padding: 2px 1px;
+  color: #555;
+  background-color: #a47d3b46;
+  border-radius: 5px;
+}
+/* End: form Style */

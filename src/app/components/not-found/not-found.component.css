@@ -1,0 +1,24 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: calc(100vh - 114px);
+  width: 100%;
+}
+
+.not-found h2 {
+  font-size: 50px;
+  color: #6e4e27;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.504);
+}
+
+.not-found p {
+  font-size: 40px;
+  /* color: #6e4e27; */
+  color: red;
+  border: 1px solid #6e4e27;
+  border-radius: 50%;
+  padding: 10px;
+}

@@ -1,0 +1,78 @@
+.form-cart {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0px auto;
+  padding: 0 15px;
+  min-width: fit-content;
+}
+
+.form-cart div {
+  display: flex;
+  flex-direction: column;
+}
+.form-cart div label {
+  display: block;
+  color: #80602b;
+  font-size: 18px;
+  padding: 5px;
+}
+.form-cart div input {
+  display: block;
+  outline: none;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 18px;
+  caret-color: #d39d40;
+  color: #4c3816;
+  background-color: #f7e7bb;
+  box-shadow: 0 0 5px inset;
+}
+.form-cart button {
+  /* form button */
+  margin: 5px auto 10px;
+  padding: 3px 5px;
+  width: 100%;
+  background-color: #7c5c24;
+  color: #eee;
+  font-size: 18px;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  box-shadow: 0 0 5px inset;
+  cursor: pointer;
+}
+
+.form-cart button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+@media (max-width: 991.98px) {
+  .protect-itemActive form button {
+    font-size: 20px;
+  }
+}
+
+.protect-itemActive form button:hover {
+  background-color: #a77b30;
+  cursor: pointer;
+  box-shadow: 0 2px 0 2px #a47d3b4f;
+}
+
+.form-cart .full-name {
+}
+
+.address {
+}
+
+.form-cart .credit-number input {
+  appearance: none;
+}
+
+.form-cart .notes-share {
+  font-size: 14px;
+  color: #d39d40;
+  font-style: italic;
+}

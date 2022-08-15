@@ -1,0 +1,16 @@
+/* Start: Style grid of layout */
+.protect-all-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px 85px;
+  margin: 30px;
+}
+@media (max-width: 991.98px){
+  .protect-all-items {
+    gap: 15px 50px;
+  }
+}
+
+/* End: Style grid of layout */
+
+

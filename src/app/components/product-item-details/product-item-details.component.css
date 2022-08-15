@@ -1,0 +1,206 @@
+.protect-itemActive {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+  min-width: fit-content;
+  width: 70%;
+  min-height: 70vh;
+  margin: 30px auto;
+  align-items: center;
+  text-align: center;
+  border: 3px solid #a47d3b6c;
+  border-radius: 10px;
+  background-color: #f7e7bb;
+}
+@media (max-width: 991.98px) {
+  .protect-itemActive {
+    flex-direction: column;
+  }
+}
+
+/* Start: Image Style */
+.protect-itemActive .img-handle {
+  width: 50%;
+  height: 437px;
+  padding: 3px 5px;
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 991.98px) {
+  .protect-itemActive .img-handle {
+    width: 100%;
+    height: 250px;
+  }
+}
+.protect-itemActive .img-handle img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.protect-itemActive .img-handle::before {
+  content: "";
+  width: 0;
+  height: 0;
+  background-color: #eee;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.3;
+  transition-delay: 0ms;
+  transition-duration: 0.3s, 0.3s, 0.3s;
+  transition-property: width, height, opacity;
+}
+.protect-itemActive .img-handle:hover {
+  transition: opacity 0 0.2s;
+}
+
+.protect-itemActive .img-handle:hover::before {
+  width: 100%;
+  height: 100%;
+}
+/* End: Image Style */
+
+/* Start: text Style */
+.protect-itemActive h3 {
+  color: #80602b;
+  margin: 5px 3px;
+  font-size: 44px;
+}
+
+@media (max-width: 991.98px) {
+  .protect-itemActive h3 {
+    font-size: 30px;
+  }
+}
+
+.protect-itemActive span {
+  display: block;
+  font-size: 33px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 5px 3px;
+  color: #555;
+  background-color: #a47d3b46;
+  border-radius: 5px;
+}
+
+@media (max-width: 991.98px) {
+  .protect-itemActive span {
+    font-size: 20px;
+  }
+}
+
+/* End: text Style */
+
+/* Start: form Style */
+/* form  select */
+.protect-itemActive form .custom-select {
+  display: block;
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
+.protect-itemActive form .custom-select select {
+  appearance: none;
+  display: block;
+  margin: 5px auto;
+  text-align: center;
+  width: 80px;
+  height: 30px;
+  font-size: 20px;
+  color: #7c5c24;
+  border: 1px solid #7c5c24;
+  border-radius: 3px;
+  outline: none;
+}
+
+.protect-itemActive form .custom-select select:hover {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.protect-itemActive form .custom-select .arrow-select {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  color: #e8b04e;
+  border: 1px solid #7c5c24;
+  border-radius: 50%;
+}
+
+.protect-itemActive form .custom-select select option {
+  background-color: #e8b04e;
+  color: white;
+  text-align: center;
+}
+
+.protect-itemActive form .custom-select select:focus > option:checked {
+  background: #000;
+  color: #eee;
+  text-align: center;
+}
+/* form  description */
+.protect-itemActive form .description {
+  font-size: 20px;
+  color: #7c5c24;
+  margin: 15px auto;
+}
+
+@media (max-width: 991.98px) {
+  .protect-itemActive form .description {
+    font-size: 16px;
+  }
+}
+/* form button */
+.protect-itemActive form button {
+  margin: 5px auto 10px;
+  padding: 8px 10px;
+  background-color: #7c5c24;
+  color: #eee;
+  font-size: 30px;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+}
+
+@media (max-width: 991.98px) {
+  .protect-itemActive form button {
+    font-size: 20px;
+  }
+}
+
+.protect-itemActive form button:hover {
+  background-color: #a77b30;
+  cursor: pointer;
+  box-shadow: 0 2px 0 2px #a47d3b4f;
+}
+/* back to product-list button */
+.protect-itemActive button.btn-back {
+  border: none;
+  background-color: transparent;
+  color: #9f7c1b;
+  padding: 2px 3px;
+  border: 1px solid #9f7c1b;
+}
+
+.protect-itemActive button.btn-back:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.protect-itemActive button.btn-back svg {
+  vertical-align: middle;
+}
+.protect-itemActive button.btn-back:hover svg {
+  background-color: #80602b;
+  color: white;
+}
+/* End: form Style */

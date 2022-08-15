@@ -1,0 +1,58 @@
+<div class="protect-item">
+  <div class="img-handle" (click)="goToItems()">
+    <img [src]="item.url" [alt]="item.name" />
+  </div>
+  <h3>{{ item.name }}</h3>
+  <span>${{ item.price }}</span>
+  <form #form="ngForm" (ngSubmit)="onSubmit($event)">
+    <div class="custom-select">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-arrow-down-circle arrow-select"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"
+        />
+      </svg>
+      <select name="num" id="num" [(ngModel)]="amountValue" >
+        <option
+          value="select"
+          style="color: rgb(131, 128, 128); background-color: #FBC42A"
+          disabled
+        >
+          select
+        </option>
+        <option
+          value="select"
+          style="color: rgb(131, 128, 128); background-color: #FBC42A"
+          disabled
+        >
+          amount
+        </option>
+
+        <option *ngFor="let num of nums" [ngValue]="num">{{ num }}</option>
+      </select>
+    </div>
+
+    <button [disabled]="form.invalid">
+      Add to Cart
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-cart-plus-fill"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0z"
+        />
+      </svg>
+    </button>
+  </form>
+</div>

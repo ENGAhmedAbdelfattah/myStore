@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+body {
+  background-color: rgb(251, 211, 162);
+}
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+::selection {
+  background-color: #E6B325;
+}
+
+/* Edit toast it to be nice in my Style */
+.toast-success {
+  background-color: #f5cb58;
+  width: 400px;
+}
+.toast-container .ngx-toastr {
+  color: #4C3818;
+}
+

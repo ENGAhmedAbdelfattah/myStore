@@ -1,0 +1,46 @@
+<form #form="ngForm" (ngSubmit)="onSubmit($event)" class="form-cart">
+  <div class="full-name">
+    <label for="full-name">Full name</label>
+    <input
+      type="text"
+      name="full-name"
+      id="full-name"
+      placeholder="(minimum 3 characters)"
+      required
+      minlength="3"
+      [(ngModel)]="fullName"
+      v-model="form.availability"
+      oninput="this.value = this.value.replace(/[^a-z]/ig, ' ');"
+    />
+  </div>
+  <div class="address">
+    <label for="address">Address</label>
+    <input
+      type="text"
+      name="address"
+      id="address"
+      placeholder="(minimum 6 characters)"
+      required
+      minlength="6"
+      [(ngModel)]="address"
+    />
+  </div>
+  <div class="credit-number">
+    <label for="credit-number">Credit card number</label>
+    <input
+      type="text"
+      name="credit-number"
+      id="credit-number"
+      placeholder="(16-digit number)"
+      required
+      minlength="16"
+      [(ngModel)]="creditNumber"
+      v-model="form.availability"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+    />
+  </div>
+  <p class="notes-share">
+    We'll never share your payment details with anyone else.
+  </p>
+  <button type="submit" [disabled]="form.invalid">Buy now</button>
+</form>
