@@ -1,4 +1,4 @@
-# 📗 MY STORE APP
+# 🛒 MY STORE APP
 
 My store app is the first project of my Udacity Angular Development Cross-Skilling . Click the link below for more information on the course.
 
@@ -121,16 +121,16 @@ This course is provided by Scholarship Egypt FWD
 - you can buy amount of product which you are want buy it by select amount option From Select Box then click on button add to cards.
 - you will take feedback alert if the  amount of product which you Select it added successfully.
 
-![product-list](./readmeImg/product-list.png)
+![product-list](./readmeImg/protect-list.png)
 
-### 🔍 Product Item Details page
+### 🧾 Product Item Details page
 
 - you can go to it if click on image of product in product list page.
 - this page display the same information about product In addition to the description about product.
 
 ![item-details](./readmeImg/item-details.png)
 
-### 🏠 Cart page
+### ⭐ Cart page
 
 - this page display all the information about cards Added and the total price for them.
 - this page display form Consists of three felid which you should fill and submit by click on buy now button to To make your purchase successful.
@@ -143,7 +143,7 @@ This course is provided by Scholarship Egypt FWD
 
 ![card](./readmeImg/card.png)
 
-### 🔍 Success page
+### 🚀 Success page
 
 - if you submit by click on buy now button and your purchase successful, you navigate to success page.
 
