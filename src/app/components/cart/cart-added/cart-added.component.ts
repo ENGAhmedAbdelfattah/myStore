@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { Product } from 'src/app/models/interfaces.model';
-import { DataItemService } from 'src/app/services/data-items.service';
+import { DataItemService } from 'src/app/services/cards.service';
 import { SelectAmountService } from 'src/app/services/select-amount.service';
 
 @Component({

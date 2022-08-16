@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
-import { DataItemService } from 'src/app/services/data-items.service';
+import { DataItemService } from 'src/app/services/cards.service';
 import { FormDataService } from 'src/app/services/form-data.service';
 import { NavigateService } from 'src/app/services/navigate.service';
 

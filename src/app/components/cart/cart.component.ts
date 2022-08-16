@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataItemService } from 'src/app/services/data-items.service';
+import { DataItemService } from 'src/app/services/cards.service';
 import { NavigateService } from 'src/app/services/navigate.service';
 import { Product } from './../../models/interfaces.model';
 

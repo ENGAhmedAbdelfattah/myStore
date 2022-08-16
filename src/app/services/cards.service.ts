@@ -1,7 +1,5 @@
 // Modules
 import { Injectable, EventEmitter } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
 // models
 import { Product } from '../models/interfaces.model';
 
@@ -17,12 +15,6 @@ export class DataItemService {
   public totalPriceEmitter: EventEmitter<number> = new EventEmitter();
   raiseDataEventEmitter(data: number) {
     this.totalPriceEmitter.emit(data);
-  }
-
-  // Get data From data.json
-  constructor(private http: HttpClient) {}
-  getData(): Observable<[]> {
-    return this.http.get<[]>('assets/data.json');
   }
 
   /* Start: Cards add and get methods */

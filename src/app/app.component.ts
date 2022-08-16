@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataItemService } from './services/data-items.service';
+import { DataItemService } from './services/cards.service';
 
 @Component({
   selector: 'app-root',

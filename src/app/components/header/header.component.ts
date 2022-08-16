@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataItemService } from 'src/app/services/data-items.service';
+import { DataItemService } from 'src/app/services/cards.service';
 
 @Component({
   selector: 'app-header',

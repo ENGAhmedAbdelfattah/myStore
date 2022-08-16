@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DataItemService } from '../../services/data-items.service';
+import { DataItemService } from '../../services/cards.service';
 import { Product } from '../../models/interfaces.model';
+import { JsonDataService } from 'src/app/services/json-data.service';
 
 @Component({
   selector: 'app-product-list',
@@ -9,11 +10,12 @@ import { Product } from '../../models/interfaces.model';
 })
 export class ProductListComponent implements OnInit {
   constructor(
-    private _DataItemService: DataItemService
+    private _DataItemService: DataItemService,
+    private _JsonDataService: JsonDataService
   ) {}
   public items: Product[] = [];
   ngOnInit(): void {
-    this._DataItemService.getData().subscribe((data) => {
+    this._JsonDataService.getData().subscribe((data) => {
       this.items = data;
     });
   }

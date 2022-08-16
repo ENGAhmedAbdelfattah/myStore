@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DataItemService } from 'src/app/services/data-items.service';
+import { DataItemService } from 'src/app/services/cards.service';
 import { Product } from '../../models/interfaces.model';
 import { ToastrService } from 'ngx-toastr';
 import { NavigateService } from 'src/app/services/navigate.service';
 import { SelectAmountService } from 'src/app/services/select-amount.service';
+import { JsonDataService } from 'src/app/services/json-data.service';
 
 @Component({
   selector: 'app-product-item-details',
@@ -29,12 +30,13 @@ export class ProductItemDetailsComponent implements OnInit {
     private _DataItemService: DataItemService,
     private toastr: ToastrService,
     private _NavigateService: NavigateService,
-    private _SelectAmountService: SelectAmountService
+    private _SelectAmountService: SelectAmountService,
+    private _JsonDataService: JsonDataService
   ) {}
 
 
   ngOnInit(): void {
-    this._DataItemService.getData().subscribe((data) => {
+    this._JsonDataService.getData().subscribe((data) => {
       this.items = data;
       this.itemActive = this.items.filter((el) => el.id === this.itemId)[0];
       this.nums = this._SelectAmountService.getNums();

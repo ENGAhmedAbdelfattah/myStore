@@ -227,10 +227,11 @@ my-store
 │  │  │  └─ app-routing.module.ts
 │  │  └─ services
 │  │     ├─ auth.service.ts
-│  │     ├─ data-items.service.ts
+│  │     ├─ cards.service.ts
 |  |     ├─ navigate.service.ts
 |  |     ├─ select-amount.service.ts
-|  |     └─form-data.service.ts
+|  |     ├─ form-data.service.ts
+|  |     └─ json-data.service.ts
 │  ├─ assets
 │  │  ├─ .gitkeep
 │  │  └─ data.json

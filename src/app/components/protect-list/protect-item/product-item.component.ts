@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataItemService } from 'src/app/services/data-items.service';
+import { DataItemService } from 'src/app/services/cards.service';
 import { ToastrService } from 'ngx-toastr';
 import { SelectAmountService } from 'src/app/services/select-amount.service';
 
