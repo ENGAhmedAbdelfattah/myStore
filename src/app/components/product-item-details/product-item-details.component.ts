@@ -58,6 +58,7 @@ export class ProductItemDetailsComponent implements OnInit {
     });
     // Feedback alert
     this.toastr.success('Card Added', 'Success 🛒');
-    this._DataItemService.raiseDataEventEmitter(5);
+    // UpdateTotal
+    this._DataItemService.getTotal(this._DataItemService.getCards());
   }
 }
