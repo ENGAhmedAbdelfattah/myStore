@@ -14,6 +14,7 @@ export class CartFormComponent implements OnInit {
   public fullName: string = '';
   public address: string = '';
   public creditNumber: number | undefined = undefined;
+  public disabledState: boolean = false;
   /* constructor */
   constructor(
     private _DataItemService: DataItemService,
@@ -22,16 +23,21 @@ export class CartFormComponent implements OnInit {
     private _FormDataService: FormDataService
   ) {}
   /* methods */
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if(this._DataItemService.getTotal(this._DataItemService.getCards()) === 0) this.disabledState = true;
+  }
   onSubmit(event: any) {
-    // console.log(event);
     this._FormDataService.addFormCart({
       fullName: this.fullName,
       address: this.address,
       creditNumber: this.creditNumber,
       amount: this._DataItemService.totalPrice,
     });
-    this._AuthService.isSubmit(true);
-    this._NavigateService.goToSuccess();
+    if (
+      this._DataItemService.getTotal(this._DataItemService.getCards()) !== 0
+    ) {
+      this._AuthService.isSubmit(true);
+      this._NavigateService.goToSuccess();
+    }
   }
 }

@@ -48,7 +48,7 @@
   margin: 5px 3px;
   font-size: 18px;
 }
-.carts .total span {
+.carts .total .total-span {
   display: block;
   font-size: 24px;
   width: 100px;
@@ -58,4 +58,7 @@
   color: #555;
   background-color: #a47d3b46;
   border-radius: 5px;
+}
+.carts .total .total-nodes {
+  color: #d39d40;
 }

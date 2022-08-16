@@ -12,6 +12,7 @@ export class CartComponent implements OnInit {
   /* variable */
   public cards: Product[] = [];
   public total: number = 0;
+  public totalNotesStatue: boolean = false;
   /* constructor */
   constructor(
     private _DataItemService: DataItemService,
@@ -24,6 +25,9 @@ export class CartComponent implements OnInit {
     this._DataItemService.totalPriceEmitter.subscribe(
       (total) => (this.total = total)
     );
+    if (this._DataItemService.getTotal(this.cards) === 0) {
+      this.totalNotesStatue = true;
+    }
   }
 
   templateGetTotal(cards: Product[]) {
@@ -34,7 +38,9 @@ export class CartComponent implements OnInit {
     this.cards = this._DataItemService.getCards();
     this.total = this._DataItemService.getTotal(this.cards);
     this._DataItemService.raiseDataEventEmitter(this.total);
-    console.log(this.total);
+    if (this._DataItemService.getTotal(this.cards) === 0) {
+      this.totalNotesStatue = true;
+    }
   }
   goToProtectList() {
     return this._NavigateService.goToProtectList();

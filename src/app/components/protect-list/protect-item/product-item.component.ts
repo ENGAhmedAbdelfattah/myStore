@@ -34,7 +34,6 @@ export class ProductItemComponent implements OnInit {
   }
   // Submit method
   onSubmit(event: any) {
-    // console.log(event);
     this._DataItemService.addCart({
       id: this.item.id,
       name: this.item.name,

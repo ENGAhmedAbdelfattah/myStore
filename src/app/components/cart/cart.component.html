@@ -24,7 +24,8 @@
       </div>
       <div class="total">
         <h3>Total</h3>
-        <span>​💰​​{{ total }}</span>
+        <span class="total-span">​💰​​{{ total }}</span>
+        <span class="total-nodes" *ngIf="totalNotesStatue">⚠️ You can't buy if the total equal Zero ⚠️</span>
       </div>
     </div>
     <app-cart-form></app-cart-form>

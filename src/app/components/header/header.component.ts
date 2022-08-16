@@ -8,7 +8,7 @@ import { DataItemService } from 'src/app/services/cards.service';
 })
 export class HeaderComponent implements OnInit {
   /* variable */
-  public total: any = 0;
+  public total: number = 0;
   /* constructor */
   constructor(private _DataItemService: DataItemService) {}
   /* methods */

@@ -43,7 +43,6 @@ export class DataItemService {
   // Update Total
   updateTotal(total: number) {
     this.totalPrice = total;
-    console.log('Service', this.totalPrice);
   }
 
   // Get Total Price
@@ -58,7 +57,6 @@ export class DataItemService {
     );
     this.updateTotal(Number(this.totalPrice.toFixed(2)));
     this.raiseDataEventEmitter(Number(this.totalPrice.toFixed(2)));
-    console.log('Service', this.totalPrice);
     return Number(this.totalPrice.toFixed(2));
   }
   /* End: Total Get and Update methods */

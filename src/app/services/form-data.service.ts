@@ -18,6 +18,5 @@ export class FormDataService {
   addFormCart(formData: FormData) {
     this.AllFormData.unshift(formData);
     this.lastUpdateFormData = formData;
-    console.log(formData);
   }
 }
