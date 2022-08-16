@@ -9,8 +9,8 @@ import { Product, FormData } from '../models/interfaces.model';
 @Injectable({
   providedIn: 'root',
 })
-
 export class DataItemService {
+  // variable
   public dataCards: Product[] = [];
   public totalPrice: number = 0;
   public AllFormData: FormData[] = [];
@@ -20,49 +20,33 @@ export class DataItemService {
     creditNumber: 0,
     amount: 0,
   };
+
+  // Emit total price
   public totalPriceEmitter: EventEmitter<number> = new EventEmitter();
   raiseDataEventEmitter(data: number) {
     this.totalPriceEmitter.emit(data);
   }
 
-  constructor(private router: Router, private http: HttpClient) {}
+  // Get data From data.json
+  constructor(private http: HttpClient) {}
   getData(): Observable<[]> {
     return this.http.get<[]>('assets/data.json');
   }
-  // public totalDataStream = new Observable((observer) => {
-  //   console.log('observer starts', observer);
-  //   observer.next(this.totalPrice);
-  // });
 
-  // data of options of select in forms
-  getNums() {
-    const nums: number[] = [];
-    for (let i = 1; i <= 10; i++) {
-      nums.push(i);
-    }
-    return nums;
-  }
-  goToProtectList() {
-    this.router.navigate([`/protect-list`]);
-  }
-
-  goToSuccess() {
-    this.router.navigate([`/success`]);
-  }
-
-  // Cards add and get methods
+  /* Start: Cards add and get methods */
   addCart(card: Product) {
     this.dataCards = this.dataCards.filter((el) => el.id !== card.id);
     this.dataCards.unshift(card);
-    // console.log(card, this.dataCards);
   }
+  // Update Cart
   updateCart(card: Product, amountSelected: number) {
     this.dataCards.filter((el) => el.id === card.id)[0].amount = amountSelected;
-    // console.log(card, this.dataCards);
   }
+  //Get All Cards
   getCards() {
     return this.dataCards;
   }
+  /* End: Cards add and get methods */
 
   // Add Form Data
   addFormCart(formData: FormData) {
@@ -70,11 +54,13 @@ export class DataItemService {
     this.lastUpdateFormData = formData;
     console.log(formData);
   }
+  
+  // Update Total
   updateTotal(total: number) {
     this.totalPrice = total;
     console.log('Service', this.totalPrice);
   }
-
+  // Get Delete Cart
   deleteCart(card: Product) {
     console.log(this.dataCards);
     this.dataCards = this.dataCards.filter((el) => el.id !== card.id);
@@ -83,10 +69,9 @@ export class DataItemService {
 
   // Get Total Price
   getTotal(cards: Product[]) {
-    const price: (number)[] = cards.map(
-      (el: Product) => el.amount? el.amount * el.price : 0
+    const price: number[] = cards.map((el: Product) =>
+      el.amount ? el.amount * el.price : 0
     );
-    // console.log(amount);
     this.totalPrice = price.reduce(
       (acc: number, current: number | undefined): number =>
         acc + Number(current),
@@ -94,8 +79,6 @@ export class DataItemService {
     );
     this.updateTotal(Number(this.totalPrice.toFixed(2)));
     this.raiseDataEventEmitter(Number(this.totalPrice.toFixed(2)));
-
-    // console.log('local', this.total)
     console.log('Service', this.totalPrice);
     return Number(this.totalPrice.toFixed(2));
   }

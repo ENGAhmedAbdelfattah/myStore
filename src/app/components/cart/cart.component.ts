@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataItemService } from 'src/app/services/data-items.service';
+import { NavigateService } from 'src/app/services/navigate.service';
 import { Product } from './../../models/interfaces.model';
 
 @Component({
@@ -8,7 +9,7 @@ import { Product } from './../../models/interfaces.model';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  constructor(private _DataItemService: DataItemService) {}
+  constructor(private _DataItemService: DataItemService, private _NavigateService: NavigateService) {}
   public cards: Product[] = [];
   public total: number = 0;
 
@@ -30,6 +31,6 @@ export class CartComponent implements OnInit {
     console.log(this.total)
   }
   goToProtectList() {
-    return this._DataItemService.goToProtectList();
+    return this._NavigateService.goToProtectList();
   }
 }

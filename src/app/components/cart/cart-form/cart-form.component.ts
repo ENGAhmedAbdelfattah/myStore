@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { DataItemService } from 'src/app/services/data-items.service';
+import { NavigateService } from 'src/app/services/navigate.service';
 
 @Component({
   selector: 'app-cart-form',
@@ -13,7 +14,8 @@ export class CartFormComponent implements OnInit {
   public creditNumber: number | undefined = undefined;
   constructor(
     private _DataItemService: DataItemService,
-    private _AuthService: AuthService
+    private _AuthService: AuthService,
+    private _NavigateService: NavigateService
   ) {}
 
   ngOnInit(): void {}
@@ -26,6 +28,6 @@ export class CartFormComponent implements OnInit {
       amount: this._DataItemService.totalPrice,
     });
     this._AuthService.isSubmit(true);
-    this._DataItemService.goToSuccess();
+    this._NavigateService.goToSuccess();
   }
 }

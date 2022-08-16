@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { DataItemService } from 'src/app/services/data-items.service';
 import { Product } from '../../models/interfaces.model';
 import { ToastrService } from 'ngx-toastr';
+import { NavigateService } from 'src/app/services/navigate.service';
+import { SelectAmountService } from 'src/app/services/select-amount.service';
 
 @Component({
   selector: 'app-product-item-details',
@@ -10,11 +12,6 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./product-item-details.component.css'],
 })
 export class ProductItemDetailsComponent implements OnInit {
-  constructor(
-    private route: ActivatedRoute,
-    private _DataItemService: DataItemService,
-    private toastr: ToastrService
-  ) {}
   public itemId = Number(this.route.snapshot.paramMap.get('id'));
   public items: Product[] = [];
   public itemActive: Product = {
@@ -27,15 +24,24 @@ export class ProductItemDetailsComponent implements OnInit {
   public nums: number[] = [];
   public amountValue: number = 1;
 
+  constructor(
+    private route: ActivatedRoute,
+    private _DataItemService: DataItemService,
+    private toastr: ToastrService,
+    private _NavigateService: NavigateService,
+    private _SelectAmountService: SelectAmountService
+  ) {}
+
+
   ngOnInit(): void {
     this._DataItemService.getData().subscribe((data) => {
       this.items = data;
       this.itemActive = this.items.filter((el) => el.id === this.itemId)[0];
-      this.nums = this._DataItemService.getNums();
+      this.nums = this._SelectAmountService.getNums();
     });
   }
   goToProtectList() {
-    return this._DataItemService.goToProtectList();
+    return this._NavigateService.goToProtectList();
   }
   onSubmit(event: any) {
     console.log(event);

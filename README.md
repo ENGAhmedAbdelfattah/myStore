@@ -226,7 +226,9 @@ my-store
 │  │  │  └─ app-routing.module.ts
 │  │  └─ services
 │  │     ├─ auth.service.ts
-│  │     └─ data-items.service.ts
+│  │     ├─ data-items.service.ts
+|  |     ├─ navigate.service.ts
+|  |     └─ select-amount.service.ts
 │  ├─ assets
 │  │  ├─ .gitkeep
 │  │  └─ data.json

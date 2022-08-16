@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { Product } from 'src/app/models/interfaces.model';
 import { DataItemService } from 'src/app/services/data-items.service';
+import { SelectAmountService } from 'src/app/services/select-amount.service';
 
 @Component({
   selector: 'app-cart-added',
@@ -14,11 +15,11 @@ export class CartAddedComponent implements OnInit {
   public amountValue: number = 1;
   public cartUpdate: object = {};
 
-  constructor(private _DataItemService: DataItemService) {}
+  constructor(private _DataItemService: DataItemService,private _SelectAmountService: SelectAmountService) {}
 
   ngOnInit(): void {
     this.amountValue = this.card.amount;
-    this.nums = this._DataItemService.getNums();
+    this.nums = this._SelectAmountService.getNums();
     this.cartUpdate = { ...this.card };
   }
 

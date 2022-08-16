@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataItemService } from 'src/app/services/data-items.service';
 import { ToastrService } from 'ngx-toastr';
+import { SelectAmountService } from 'src/app/services/select-amount.service';
 
 @Component({
   selector: 'app-product-item',
@@ -16,12 +17,13 @@ export class ProductItemComponent implements OnInit {
   constructor(
     private router: Router,
     private _DataItemService: DataItemService,
+    private _SelectAmountService: SelectAmountService,
     private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
     // get data of options of select in form
-    this.nums = this._DataItemService.getNums();
+    this.nums = this._SelectAmountService.getNums();
     // Change Feedback alert to be center
     this.toastr.toastrConfig.positionClass = 'toast-top-center';
   }

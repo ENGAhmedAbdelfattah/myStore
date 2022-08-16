@@ -4,9 +4,11 @@
   padding: 0;
   height: auto;
 }
+/* body */
 body {
   background-color: rgb(251, 211, 162);
 }
+/* container */
 .container {
   padding: 0 15px;
   margin: 0 auto;
@@ -29,7 +31,7 @@ body {
     width: 1170px;
   }
 }
-
+/* selection */
 ::selection {
   background-color: #E6B325;
 }
