@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { DataItemService } from 'src/app/services/data-items.service';
+import { FormDataService } from 'src/app/services/form-data.service';
 import { NavigateService } from 'src/app/services/navigate.service';
 
 @Component({
@@ -15,13 +16,14 @@ export class CartFormComponent implements OnInit {
   constructor(
     private _DataItemService: DataItemService,
     private _AuthService: AuthService,
-    private _NavigateService: NavigateService
+    private _NavigateService: NavigateService,
+    private _FormDataService: FormDataService
   ) {}
 
   ngOnInit(): void {}
   onSubmit(event: any) {
     // console.log(event);
-    this._DataItemService.addFormCart({
+    this._FormDataService.addFormCart({
       fullName: this.fullName,
       address: this.address,
       creditNumber: this.creditNumber,

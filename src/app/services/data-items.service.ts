@@ -2,9 +2,8 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 // models
-import { Product, FormData } from '../models/interfaces.model';
+import { Product } from '../models/interfaces.model';
 
 @Injectable({
   providedIn: 'root',
@@ -13,13 +12,6 @@ export class DataItemService {
   // variable
   public dataCards: Product[] = [];
   public totalPrice: number = 0;
-  public AllFormData: FormData[] = [];
-  public lastUpdateFormData: FormData = {
-    fullName: '',
-    address: '',
-    creditNumber: 0,
-    amount: 0,
-  };
 
   // Emit total price
   public totalPriceEmitter: EventEmitter<number> = new EventEmitter();
@@ -48,13 +40,6 @@ export class DataItemService {
   }
   /* End: Cards add and get methods */
 
-  // Add Form Data
-  addFormCart(formData: FormData) {
-    this.AllFormData.unshift(formData);
-    this.lastUpdateFormData = formData;
-    console.log(formData);
-  }
-  
   // Update Total
   updateTotal(total: number) {
     this.totalPrice = total;
