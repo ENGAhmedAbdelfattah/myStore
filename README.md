@@ -14,7 +14,7 @@ This course is provided by Scholarship Egypt FWD
 
 ## 💻 Install
 
-- The first thing : I did was start with a fresh Create Angular App instance to use the lasted version of Angular
+- The first step: I did was start with a fresh Create Angular App instance to use the lasted version of Angular
 - the commends for install Angular with Angular-CLI
 
   ```
@@ -27,7 +27,7 @@ This course is provided by Scholarship Egypt FWD
   ng serve
   ```
 
-- The Second thing &nbsp;: I Clear content of some file :
+- The Second step: I Clear content of some file :
 
   ```
   |—— src
@@ -43,25 +43,25 @@ This course is provided by Scholarship Egypt FWD
 
   -and delete All test files because it was optional.
 
-- The third thing &nbsp;: I change Hierarchy of folder to fit this App:
+- The third step: I change Hierarchy of folder to fit this App:
   **and you can see all Directory Hierarchy in section of it**
 
-- The third thing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: I copied file of data.json which contain Data of product items from assets in [start repository](https://github.com/udacity/nd-0067-c3-angular-fundamentals-project-starter/tree/main/src/assets) from Udacity GitHup and add them to assets folder in src folder
-- The fourth thing &nbsp;&nbsp;&nbsp;&nbsp;: I init new git repo on my-reads folder
+- The fourth step: I copied file of data.json which contain Data of product items from assets in [start repository](https://github.com/udacity/nd-0067-c3-angular-fundamentals-project-starter/tree/main/src/assets) from Udacity GitHup and add them to assets folder in src folder
+- The fourth step: I init new git repo on my-reads folder
   ```
   git init
   git commit -m "first commit"
   git branch -M main
   ```
-- The fifth thing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: I created new repo on my GitHup account and add to my local repo
+- The fifth step: I created new repo on my GitHup account and add to my local repo
   ```
   git remote add origin git@github.com:ahmed-ENDless/22.git
   git push -u origin main
   ```
-- The sixth thing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: I use Angular-router package which automatically install when create app and I used it to route in this app
+- The sixth step: I use Angular-router package which automatically install when create app and I used it to route in this app
 
-- The seventh thing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: I use Rxjs package which automatically install when create app and I fetch Data from data.json
-- The eighth thing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: After end build the app I use npm package to build it to be ready to client use it
+- The seventh step: I use Rxjs package which automatically install when create app and I fetch Data from data.json
+- The eighth step: After end build the app I use npm package to build it to be ready to client use it
   ```
   npm run build
   ```
@@ -270,7 +270,7 @@ my-store
 ## 👨🏻‍💻 Code Details
 
 - I used typescript.
-- I used component to manage userInterface(UI).
+- I used components to manage userInterface(UI).
 - I used service to manage data and share it between components.
 - I uses Guard/Auth to product routs.
 
