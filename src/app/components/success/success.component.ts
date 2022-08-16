@@ -9,15 +9,17 @@ import { NavigateService } from 'src/app/services/navigate.service';
   styleUrls: ['./success.component.css'],
 })
 export class SuccessComponent implements OnInit {
+  /* variable */
   public fullName: string = '';
   public total: number = 0;
 
+  /* constructor */
   constructor(
     private _DataItemService: DataItemService,
     private _NavigateService: NavigateService,
     private _FormDataService: FormDataService
   ) {}
-
+  /* methods */
   ngOnInit(): void {
     this.fullName = this._FormDataService.lastUpdateFormData.fullName;
     this.total = this._DataItemService.totalPrice;

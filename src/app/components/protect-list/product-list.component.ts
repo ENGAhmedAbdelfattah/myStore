@@ -9,11 +9,14 @@ import { JsonDataService } from 'src/app/services/json-data.service';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
+  /* variable */
+  public items: Product[] = [];
+  /* constructor */
   constructor(
     private _DataItemService: DataItemService,
     private _JsonDataService: JsonDataService
   ) {}
-  public items: Product[] = [];
+  /* methods */
   ngOnInit(): void {
     this._JsonDataService.getData().subscribe((data) => {
       this.items = data;

@@ -10,17 +10,18 @@ import { SelectAmountService } from 'src/app/services/select-amount.service';
   styleUrls: ['./product-item.component.css'],
 })
 export class ProductItemComponent implements OnInit {
+  /* variable */
   public nums: number[] = [];
   public amountValue: number = 1;
   @Input('item') public item: any;
-
+  /* constructor */
   constructor(
     private router: Router,
     private _DataItemService: DataItemService,
     private _SelectAmountService: SelectAmountService,
     private toastr: ToastrService
   ) {}
-
+  /* methods */
   ngOnInit(): void {
     // get data of options of select in form
     this.nums = this._SelectAmountService.getNums();
@@ -45,6 +46,6 @@ export class ProductItemComponent implements OnInit {
     // Feedback alert
     this.toastr.success('Card Added', 'Success 🛒');
     // Update Total
-    this._DataItemService.getTotal(this._DataItemService.getCards())
+    this._DataItemService.getTotal(this._DataItemService.getCards());
   }
 }

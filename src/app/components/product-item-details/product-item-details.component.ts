@@ -13,6 +13,7 @@ import { JsonDataService } from 'src/app/services/json-data.service';
   styleUrls: ['./product-item-details.component.css'],
 })
 export class ProductItemDetailsComponent implements OnInit {
+  /* variable */
   public itemId = Number(this.route.snapshot.paramMap.get('id'));
   public items: Product[] = [];
   public itemActive: Product = {
@@ -24,7 +25,7 @@ export class ProductItemDetailsComponent implements OnInit {
   };
   public nums: number[] = [];
   public amountValue: number = 1;
-
+  /* constructor */
   constructor(
     private route: ActivatedRoute,
     private _DataItemService: DataItemService,
@@ -34,7 +35,7 @@ export class ProductItemDetailsComponent implements OnInit {
     private _JsonDataService: JsonDataService
   ) {}
 
-
+  /* methods */
   ngOnInit(): void {
     this._JsonDataService.getData().subscribe((data) => {
       this.items = data;

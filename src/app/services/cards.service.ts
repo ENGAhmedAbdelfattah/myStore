@@ -7,7 +7,7 @@ import { Product } from '../models/interfaces.model';
   providedIn: 'root',
 })
 export class DataItemService {
-  // variable
+  /* variable */
   public dataCards: Product[] = [];
   public totalPrice: number = 0;
 
@@ -16,8 +16,8 @@ export class DataItemService {
   raiseDataEventEmitter(data: number) {
     this.totalPriceEmitter.emit(data);
   }
-
-  /* Start: Cards add and get methods */
+  /* methods */
+  /* Start: Cards Cards add, get and delete methods */
   addCart(card: Product) {
     this.dataCards = this.dataCards.filter((el) => el.id !== card.id);
     this.dataCards.unshift(card);
@@ -30,18 +30,20 @@ export class DataItemService {
   getCards() {
     return this.dataCards;
   }
-  /* End: Cards add and get methods */
 
-  // Update Total
-  updateTotal(total: number) {
-    this.totalPrice = total;
-    console.log('Service', this.totalPrice);
-  }
   // Get Delete Cart
   deleteCart(card: Product) {
     console.log(this.dataCards);
     this.dataCards = this.dataCards.filter((el) => el.id !== card.id);
     console.log(this.dataCards);
+  }
+  /* End: Cards add, get and delete methods */
+
+  /* Start: Total Get and Update methods */
+  // Update Total
+  updateTotal(total: number) {
+    this.totalPrice = total;
+    console.log('Service', this.totalPrice);
   }
 
   // Get Total Price
@@ -59,4 +61,5 @@ export class DataItemService {
     console.log('Service', this.totalPrice);
     return Number(this.totalPrice.toFixed(2));
   }
+  /* End: Total Get and Update methods */
 }

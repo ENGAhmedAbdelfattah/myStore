@@ -10,13 +10,13 @@ import { SelectAmountService } from 'src/app/services/select-amount.service';
 })
 export class CartAddedComponent implements OnInit {
   @Input('card') public card: any;
-
+  /* variable */
   public nums: number[] = [];
   public amountValue: number = 1;
   public cartUpdate: object = {};
-
+  /* constructor */
   constructor(private _DataItemService: DataItemService,private _SelectAmountService: SelectAmountService) {}
-
+  /* methods */
   ngOnInit(): void {
     this.amountValue = this.card.amount;
     this.nums = this._SelectAmountService.getNums();

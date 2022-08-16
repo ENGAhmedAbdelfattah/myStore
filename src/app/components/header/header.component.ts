@@ -7,11 +7,14 @@ import { DataItemService } from 'src/app/services/cards.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  /* variable */
   public total: any = 0;
-  constructor(private _DataItemService: DataItemService) {
-  }
-
+  /* constructor */
+  constructor(private _DataItemService: DataItemService) {}
+  /* methods */
   ngOnInit(): void {
-    this._DataItemService.totalPriceEmitter.subscribe((total)=> this.total = total);
+    this._DataItemService.totalPriceEmitter.subscribe(
+      (total) => (this.total = total)
+    );
   }
 }

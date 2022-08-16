@@ -10,16 +10,18 @@ import { NavigateService } from 'src/app/services/navigate.service';
   styleUrls: ['./cart-form.component.css'],
 })
 export class CartFormComponent implements OnInit {
+  /* variable */
   public fullName: string = '';
   public address: string = '';
   public creditNumber: number | undefined = undefined;
+  /* constructor */
   constructor(
     private _DataItemService: DataItemService,
     private _AuthService: AuthService,
     private _NavigateService: NavigateService,
     private _FormDataService: FormDataService
   ) {}
-
+  /* methods */
   ngOnInit(): void {}
   onSubmit(event: any) {
     // console.log(event);
