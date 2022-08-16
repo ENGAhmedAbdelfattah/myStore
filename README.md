@@ -40,6 +40,7 @@ This course is provided by Scholarship Egypt FWD
   |—— src
     |—— favicon.ico
   ```
+
   -and delete All test files because it was optional.
 
 - The third thing &nbsp;: I change Hierarchy of folder to fit this App:
@@ -60,7 +61,6 @@ This course is provided by Scholarship Egypt FWD
 - The sixth thing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: I use Angular-router package which automatically install when create app and I used it to route in this app
 
 - The seventh thing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: I use Rxjs package which automatically install when create app and I fetch Data from data.json
-  
 - The eighth thing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: After end build the app I use npm package to build it to be ready to client use it
   ```
   npm run build
@@ -84,6 +84,7 @@ This course is provided by Scholarship Egypt FWD
     "zone.js": "~0.11.4"
   },
 ```
+
 ```
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.1.1",
@@ -119,7 +120,7 @@ This course is provided by Scholarship Egypt FWD
   - Want to Read </br>
   - Read
 - you can buy amount of product which you are want buy it by select amount option From Select Box then click on button add to cards.
-- you will take feedback alert if the  amount of product which you Select it added successfully.
+- you will take feedback alert if the amount of product which you Select it added successfully.
 
 ![product-list](./readmeImg/protect-list.png)
 
@@ -140,7 +141,6 @@ This course is provided by Scholarship Egypt FWD
   - Credit card number
 - you can change, modify, exit your cards on this page before submit.
 
-
 ![card](./readmeImg/card.png)
 
 ### 🚀 Success page
@@ -152,6 +152,7 @@ This course is provided by Scholarship Egypt FWD
 ![success](./readmeImg/success.png)
 
 ### 🔍 Not found page
+
 - if you write wrong path route in the address bar in your browser, it automatically navigate to not found page and display 404 error.
 - if you try navigate to success page by write path of it in address bar, it also automatically navigate to not found page and display 404 error because no submit ocurred.
 
@@ -228,7 +229,8 @@ my-store
 │  │     ├─ auth.service.ts
 │  │     ├─ data-items.service.ts
 |  |     ├─ navigate.service.ts
-|  |     └─ select-amount.service.ts
+|  |     ├─ select-amount.service.ts
+|  |     └─form-data.service.ts
 │  ├─ assets
 │  │  ├─ .gitkeep
 │  │  └─ data.json
