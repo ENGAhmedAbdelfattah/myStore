@@ -45,7 +45,7 @@ header nav ul li a svg {
 header nav ul li a:hover {
   background-color: #fbc42a;
 }
-
+/* total */
 header .total {
   text-align: center;
   display: flex;
