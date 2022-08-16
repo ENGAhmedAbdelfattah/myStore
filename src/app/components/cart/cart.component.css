@@ -1,11 +1,10 @@
 .cart-container {
   display: grid;
-  width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-content: center;
-  align-items: center;
-  align-content: center;
   gap: 70px;
+  margin-top: 50px;
+  width: 100%;
 }
 
 .cart {
@@ -42,6 +41,7 @@
 /* total  */
 .carts .total {
   text-align: center;
+  margin-bottom: 50px;
 }
 .carts .total h3 {
   color: #80602b;
