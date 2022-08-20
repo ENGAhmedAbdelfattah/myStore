@@ -14,7 +14,6 @@ export class CartFormComponent implements OnInit {
   public fullName: string = '';
   public address: string = '';
   public creditNumber: number | undefined = undefined;
-  // public disabledState: boolean = false;
   /* constructor */
   constructor(
     private _CardsService: CardsService,
@@ -23,10 +22,7 @@ export class CartFormComponent implements OnInit {
     private _FormDataService: FormDataService
   ) {}
   /* methods */
-  ngOnInit(): void {
-    // if (this._CardsService.getTotal(this._CardsService.getCards()) === 0)
-    //   this.disabledState = true;
-  }
+  ngOnInit(): void {}
 
   validation(e: any) {
     if (
