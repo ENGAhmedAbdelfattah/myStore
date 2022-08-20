@@ -42,5 +42,5 @@
   <p class="notes-share">
     We'll never share your payment details with anyone else.
   </p>
-  <button type="submit" [disabled]="form.invalid || disabledState">Buy now</button>
+  <button type="submit" [disabled]="validation(form)">Buy now</button>
 </form>

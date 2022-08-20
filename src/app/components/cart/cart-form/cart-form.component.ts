@@ -14,7 +14,7 @@ export class CartFormComponent implements OnInit {
   public fullName: string = '';
   public address: string = '';
   public creditNumber: number | undefined = undefined;
-  public disabledState: boolean = false;
+  // public disabledState: boolean = false;
   /* constructor */
   constructor(
     private _CardsService: CardsService,
@@ -24,8 +24,20 @@ export class CartFormComponent implements OnInit {
   ) {}
   /* methods */
   ngOnInit(): void {
-    if(this._CardsService.getTotal(this._CardsService.getCards()) === 0) this.disabledState = true;
+    // if (this._CardsService.getTotal(this._CardsService.getCards()) === 0)
+    //   this.disabledState = true;
   }
+
+  validation(e: any) {
+    if (
+      this._CardsService.getTotal(this._CardsService.getCards()) === 0 ||
+      e.invalid === true
+    ) {
+      return true;
+    }
+    return false;
+  }
+
   onSubmit(event: any) {
     this._FormDataService.addFormCart({
       fullName: this.fullName,
@@ -33,11 +45,11 @@ export class CartFormComponent implements OnInit {
       creditNumber: this.creditNumber,
       amount: this._CardsService.totalPrice,
     });
-    if (
-      this._CardsService.getTotal(this._CardsService.getCards()) !== 0
-    ) {
+    if (this._CardsService.getTotal(this._CardsService.getCards()) !== 0) {
       this._AuthService.isSubmit(true);
       this._NavigateService.goToSuccess();
+    } else {
+      // this.disabledState = true;
     }
   }
 }
