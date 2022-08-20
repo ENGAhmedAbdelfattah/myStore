@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataItemService } from 'src/app/services/cards.service';
+import { CardsService } from 'src/app/services/cards.service';
 import { ToastrService } from 'ngx-toastr';
 import { SelectAmountService } from 'src/app/services/select-amount.service';
 
@@ -17,7 +17,7 @@ export class ProductItemComponent implements OnInit {
   /* constructor */
   constructor(
     private router: Router,
-    private _DataItemService: DataItemService,
+    private _CardsService: CardsService,
     private _SelectAmountService: SelectAmountService,
     private toastr: ToastrService
   ) {}
@@ -34,7 +34,7 @@ export class ProductItemComponent implements OnInit {
   }
   // Submit method
   onSubmit(event: any) {
-    this._DataItemService.addCart({
+    this._CardsService.addCart({
       id: this.item.id,
       name: this.item.name,
       price: this.item.price,
@@ -45,6 +45,6 @@ export class ProductItemComponent implements OnInit {
     // Feedback alert
     this.toastr.success('Card Added', 'Success 🛒');
     // Update Total
-    this._DataItemService.getTotal(this._DataItemService.getCards());
+    this._CardsService.getTotal(this._CardsService.getCards());
   }
 }

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { Product } from 'src/app/models/interfaces.model';
-import { DataItemService } from 'src/app/services/cards.service';
+import { CardsService } from 'src/app/services/cards.service';
 import { SelectAmountService } from 'src/app/services/select-amount.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class CartAddedComponent implements OnInit {
   public amountValue: number = 1;
   public cartUpdate: object = {};
   /* constructor */
-  constructor(private _DataItemService: DataItemService,private _SelectAmountService: SelectAmountService) {}
+  constructor(private _CardsService: CardsService,private _SelectAmountService: SelectAmountService) {}
   /* methods */
   ngOnInit(): void {
     this.amountValue = this.card.amount;
@@ -26,14 +26,14 @@ export class CartAddedComponent implements OnInit {
   @Output() public selectionChange: EventEmitter<number> =
     new EventEmitter<number>();
   onSelectionChange() {
-    this._DataItemService.updateCart(this.card, this.amountValue);
+    this._CardsService.updateCart(this.card, this.amountValue);
     this.selectionChange.emit(this.amountValue);
   }
 
   @Output() public cartsUpdate: EventEmitter<object> =
     new EventEmitter<object>();
   deleteThisCart() {
-    this._DataItemService.deleteCart(this.card);
+    this._CardsService.deleteCart(this.card);
     this.cartsUpdate.emit(this.card);
   }
 }

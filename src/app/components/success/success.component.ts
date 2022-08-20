@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataItemService } from 'src/app/services/cards.service';
+import { CardsService } from 'src/app/services/cards.service';
 import { FormDataService } from 'src/app/services/form-data.service';
 import { NavigateService } from 'src/app/services/navigate.service';
 
@@ -15,14 +15,14 @@ export class SuccessComponent implements OnInit {
 
   /* constructor */
   constructor(
-    private _DataItemService: DataItemService,
+    private _CardsService: CardsService,
     private _NavigateService: NavigateService,
     private _FormDataService: FormDataService
   ) {}
   /* methods */
   ngOnInit(): void {
     this.fullName = this._FormDataService.lastUpdateFormData.fullName;
-    this.total = this._DataItemService.totalPrice;
+    this.total = this._CardsService.totalPrice;
   }
   goToProtectList() {
     return this._NavigateService.goToProtectList();

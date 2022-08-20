@@ -6,10 +6,11 @@ import { Product } from '../models/interfaces.model';
 @Injectable({
   providedIn: 'root',
 })
-export class DataItemService {
+export class CardsService {
   /* variable */
   public dataCards: Product[] = [];
   public totalPrice: number = 0;
+
 
   // Emit total price
   public totalPriceEmitter: EventEmitter<number> = new EventEmitter();

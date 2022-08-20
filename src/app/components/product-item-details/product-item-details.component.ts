@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DataItemService } from 'src/app/services/cards.service';
+import { CardsService } from 'src/app/services/cards.service';
 import { Product } from '../../models/interfaces.model';
 import { ToastrService } from 'ngx-toastr';
 import { NavigateService } from 'src/app/services/navigate.service';
@@ -28,7 +28,7 @@ export class ProductItemDetailsComponent implements OnInit {
   /* constructor */
   constructor(
     private route: ActivatedRoute,
-    private _DataItemService: DataItemService,
+    private _CardsService: CardsService,
     private toastr: ToastrService,
     private _NavigateService: NavigateService,
     private _SelectAmountService: SelectAmountService,
@@ -48,7 +48,7 @@ export class ProductItemDetailsComponent implements OnInit {
   }
   onSubmit(event: any) {
     console.log(event);
-    this._DataItemService.addCart({
+    this._CardsService.addCart({
       id: this.itemActive.id,
       name: this.itemActive.name,
       price: this.itemActive.price,
@@ -59,6 +59,6 @@ export class ProductItemDetailsComponent implements OnInit {
     // Feedback alert
     this.toastr.success('Card Added', 'Success 🛒');
     // UpdateTotal
-    this._DataItemService.getTotal(this._DataItemService.getCards());
+    this._CardsService.getTotal(this._CardsService.getCards());
   }
 }

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DataItemService } from '../../services/cards.service';
+import { CardsService } from '../../services/cards.service';
 import { Product } from '../../models/interfaces.model';
 import { JsonDataService } from 'src/app/services/json-data.service';
 
@@ -13,7 +13,7 @@ export class ProductListComponent implements OnInit {
   public items: Product[] = [];
   /* constructor */
   constructor(
-    private _DataItemService: DataItemService,
+    private _CardsService: CardsService,
     private _JsonDataService: JsonDataService
   ) {}
   /* methods */

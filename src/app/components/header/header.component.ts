@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataItemService } from 'src/app/services/cards.service';
+import { CardsService } from 'src/app/services/cards.service';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +10,10 @@ export class HeaderComponent implements OnInit {
   /* variable */
   public total: number = 0;
   /* constructor */
-  constructor(private _DataItemService: DataItemService) {}
+  constructor(private _CardsService: CardsService) {}
   /* methods */
   ngOnInit(): void {
-    this._DataItemService.totalPriceEmitter.subscribe(
+    this._CardsService.totalPriceEmitter.subscribe(
       (total) => (this.total = total)
     );
   }
