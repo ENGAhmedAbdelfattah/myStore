@@ -44,8 +44,6 @@ export class CartFormComponent implements OnInit {
     if (this._CardsService.getTotal(this._CardsService.getCards()) !== 0) {
       this._AuthService.isSubmit(true);
       this._NavigateService.goToSuccess();
-    } else {
-      // this.disabledState = true;
     }
   }
 }
