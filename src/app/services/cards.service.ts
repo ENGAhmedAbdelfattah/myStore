@@ -10,7 +10,7 @@ export class CardsService {
   /* variable */
   public dataCards: Product[] = [];
   public totalPrice: number = 0;
-
+  public AddDone: boolean = false;
 
   // Emit total price
   public totalPriceEmitter: EventEmitter<number> = new EventEmitter();
@@ -23,6 +23,10 @@ export class CardsService {
     this.dataCards = this.dataCards.filter((el) => el.id !== card.id);
     this.dataCards.unshift(card);
   }
+
+  AddDoneHandle(item:Product) {
+    return this.dataCards.find((el) => el.id === item.id) ? true : false;
+  };
   // Update Cart
   updateCart(card: Product, amountSelected: number) {
     this.dataCards.filter((el) => el.id === card.id)[0].amount = amountSelected;

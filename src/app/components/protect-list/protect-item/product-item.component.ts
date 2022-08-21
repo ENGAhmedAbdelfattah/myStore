@@ -13,6 +13,7 @@ export class ProductItemComponent implements OnInit {
   /* variable */
   public nums: number[] = [];
   public amountValue: number = 1;
+  public AddDoneLocale = false;
   @Input('item') public item: any;
   /* constructor */
   constructor(
@@ -27,6 +28,7 @@ export class ProductItemComponent implements OnInit {
     this.nums = this._SelectAmountService.getNums();
     // Change Feedback alert to be center
     this.toastr.toastrConfig.positionClass = 'toast-top-center';
+    this.AddDoneLocale = this._CardsService.AddDoneHandle(this.item);
   }
   // Navigate method
   goToItems() {
@@ -46,5 +48,6 @@ export class ProductItemComponent implements OnInit {
     this.toastr.success('Card Added', 'Success 🛒');
     // Update Total
     this._CardsService.getTotal(this._CardsService.getCards());
+    this.AddDoneLocale = this._CardsService.AddDoneHandle(this.item);
   }
 }

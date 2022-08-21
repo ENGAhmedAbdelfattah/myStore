@@ -25,6 +25,7 @@ export class ProductItemDetailsComponent implements OnInit {
   };
   public nums: number[] = [];
   public amountValue: number = 1;
+  public AddDoneLocale = false;
   /* constructor */
   constructor(
     private route: ActivatedRoute,
@@ -41,6 +42,7 @@ export class ProductItemDetailsComponent implements OnInit {
       this.items = data;
       this.itemActive = this.items.filter((el) => el.id === this.itemId)[0];
       this.nums = this._SelectAmountService.getNums();
+      this.AddDoneLocale = this._CardsService.AddDoneHandle(this.itemActive);
     });
   }
   goToProtectList() {
@@ -60,5 +62,7 @@ export class ProductItemDetailsComponent implements OnInit {
     this.toastr.success('Card Added', 'Success 🛒');
     // UpdateTotal
     this._CardsService.getTotal(this._CardsService.getCards());
+    this.AddDoneLocale = this._CardsService.AddDoneHandle(this.itemActive);
+
   }
 }
