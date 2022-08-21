@@ -10,7 +10,7 @@
       minlength="3"
       [(ngModel)]="fullName"
       v-model="form.availability"
-      oninput="this.value = this.value.replace(/[^a-z]/ig, ' ');"
+      oninput="this.value = this.value.replace(/[^a-z ]/ig, '');"
     />
   </div>
   <div class="address">
@@ -36,7 +36,6 @@
       minlength="16"
       [(ngModel)]="creditNumber"
       v-model="form.availability"
-      oninput="this.value = this.value.replace(/[^0-9]/g, '');"
     />
   </div>
   <p class="notes-share">
@@ -44,3 +43,4 @@
   </p>
   <button type="submit" [disabled]="validation(form)">Buy now</button>
 </form>
+<!-- oninput="this.value = this.value.replace(/[^0-9]/g, '');" -->

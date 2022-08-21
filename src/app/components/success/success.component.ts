@@ -23,6 +23,8 @@ export class SuccessComponent implements OnInit {
   ngOnInit(): void {
     this.fullName = this._FormDataService.lastUpdateFormData.fullName;
     this.total = this._CardsService.totalPrice;
+    this._CardsService.dataCards = [] ;
+    this._CardsService.getTotal(this._CardsService.getCards())
   }
   goToProtectList() {
     return this._NavigateService.goToProtectList();

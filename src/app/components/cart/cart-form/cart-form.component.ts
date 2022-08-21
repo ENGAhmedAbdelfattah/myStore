@@ -11,6 +11,7 @@ import { NavigateService } from 'src/app/services/navigate.service';
 })
 export class CartFormComponent implements OnInit {
   /* variable */
+
   public fullName: string = '';
   public address: string = '';
   public creditNumber: number | undefined = undefined;
@@ -35,15 +36,19 @@ export class CartFormComponent implements OnInit {
   }
 
   onSubmit(event: any) {
-    this._FormDataService.addFormCart({
-      fullName: this.fullName,
-      address: this.address,
-      creditNumber: this.creditNumber,
-      amount: this._CardsService.totalPrice,
-    });
-    if (this._CardsService.getTotal(this._CardsService.getCards()) !== 0) {
-      this._AuthService.isSubmit(true);
-      this._NavigateService.goToSuccess();
+    this.fullName = this.fullName.trim();
+    this.address = this.address.trim();
+    if (/^[a-zA-Z ]/gi.test(this.fullName) && !/[^1-9]/gi.test(this.creditNumber as unknown as string)) {
+      this._FormDataService.addFormCart({
+        fullName: this.fullName,
+        address: this.address,
+        creditNumber: this.creditNumber,
+        amount: this._CardsService.totalPrice,
+      });
+      if (this._CardsService.getTotal(this._CardsService.getCards()) !== 0) {
+        this._AuthService.isSubmit(true);
+        this._NavigateService.goToSuccess();
+      }
     }
   }
 }
