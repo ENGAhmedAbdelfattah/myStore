@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "docs": "ng build --output-path docs --base-href my-store",
+    "docs2": "ng build --output-path docs",
     "deploybuild": "ng build --base-href 'https://ENGAhmedAbdelfattah.github.io/myStore/'",
     "deploy": "ngh --dir dist/my-store",
     "watch": "ng build --watch --configuration development",
