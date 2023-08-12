@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "deploybuild": "ng build --base-href 'https://ENGAhmedAbdelfattah.github.io/myStore/'",
+    "deploy": "ngh --dir dist/my-store",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
