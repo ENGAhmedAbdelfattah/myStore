@@ -10,7 +10,7 @@ This course is provided by Scholarship Egypt FWD
 
 - Title: `MY STORE`
 - Author: `Ahmed Mahmoud Abdelfattah`
-- My store app is published at : [https://engahmedabdelfattah.github.io/myStore/protect-list/](https://engahmedabdelfattah.github.io/myStore/my-store/protect-list)
+- My store app is published at : [https://engahmedabdelfattah.github.io/myStore](https://engahmedabdelfattah.github.io/myStore)
 
 ## 💻 Install
 
